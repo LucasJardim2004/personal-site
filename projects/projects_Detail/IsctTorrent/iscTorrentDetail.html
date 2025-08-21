@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project — IscTorrent</title>
+
+    <!-- Google Font (optional, consistent with site) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <style>
+      body { background: #ffffff; font-family: "Inter", system-ui, -apple-system, sans-serif; }
+      .page-wrap { max-width: 1120px; }
+      .back-row { margin-top: 1.5rem; }
+      .project-hero {
+        border: 1px solid #b3b3b3; border-radius: 14px; background: #fff;
+        padding: 1.25rem 1.25rem; margin-bottom: 1.25rem;
+      }
+      .project-hero h1 { font-family: 'Poppins', sans-serif; font-weight: 600; }
+      .meta small { color: #6c757d; }
+      .tech-badge { border: 1px solid #2b2b2b; color: #2b2b2b; border-radius: 999px; padding: .25rem .6rem; font-size: .85rem; }
+      .section-card { border: 1px solid #b3b3b3; border-radius: 14px; background: #fff; padding: 1rem 1.25rem; }
+      .section-card + .section-card { margin-top: 1rem; }
+      .carousel-inner img { object-fit: cover; }
+      .list-check { padding-left: 1.1rem; }
+      .list-check li { margin-bottom: .35rem; }
+    </style>
+  </head>
+  <body>
+    <div class="container page-wrap py-5">
+
+      <!-- Hero -->
+      <section class="project-hero">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+          <div>
+            <h1 class="h3 mb-1">IscTorrent</h1>
+            <div class="meta">
+              <small>Type: University Project • Year: 2024 • Status: Completed</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="row g-4">
+        <!-- Gallery / Carousel -->
+        <div class="col-12 col-lg-6">
+          <div id="projectCarousel" class="carousel slide section-card" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner ratio ratio-16x9">
+              <div class="carousel-item active">
+                <img src="./I1.png" class="d-block w-100" alt="IscTorrent — solicitar música por broadcast" />
+              </div>
+              <div class="carousel-item">
+                <img src="./I2.png" class="d-block w-100" alt="IscTorrent — envio concorrente de blocos" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="col-12 col-lg-6">
+          <div class="section-card">
+            <h2 class="h5">What this project does</h2>
+            <p class="mb-2">
+              IscTorrent is a peer-to-peer (P2P) application developed in <strong>Java</strong> (IntelliJ) for the <em>Concurrent and Distributed Programming</em> course. Each user runs a local node (e.g., ports 8080, 8081, …) and connects to other nodes in the network. When searching for a <code>.mp3</code> song, the request is sent via <strong>broadcast</strong> to connected peers; any peer with the file responds and starts sending it <strong>concurrently</strong> in ordered byte blocks. Once all blocks arrive, they are reassembled on the client side, and the user now owns the song.
+            </p>
+            <ul class="list-check">
+              <li>Peer discovery via broadcast on active connections</li>
+              <li>Parallel block transfers (multi-source) with reordering on the client</li>
+              <li>Thread pool to handle simultaneous uploads/downloads</li>
+              <li>Reassembled file persistence and basic integrity check</li>
+            </ul>
+          </div>
+
+          <div class="section-card">
+            <h2 class="h5">Tech stack</h2>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">IntelliJ IDEA</span>
+              <span class="tech-badge">TCP/IP Sockets</span>
+              <span class="tech-badge">Multithreading</span>
+              <span class="tech-badge">Thread Pool</span>
+              <span class="tech-badge">P2P</span>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <h2 class="h5">Role &amp; challenges</h2>
+            <p class="mb-2">Project done in pairs. I designed and implemented the simple discovery/transfer protocol, block division, and coordination of <em>uploads</em>/<em>downloads</em> using a <code>ThreadPool</code>. Main challenges: synchronization and ordering of blocks coming from multiple sources, avoiding <em>race conditions</em>, and managing I/O without blocking the UI/flow.</p>
+          </div>
+
+          <div class="section-card">
+            <h2 class="h5">What I learned</h2>
+            <ul class="list-check">
+              <li>Programming with <code>ServerSocket</code>/<code>Socket</code> and messages between peers</li>
+              <li>Thread-safe structures and coordination with <code>synchronized</code> and <code>ConcurrentHashMap</code></li>
+              <li>File division, ordering, and reassembly by blocks</li>
+              <li>Sizing <code>ThreadPool</code> and managing I/O-bound tasks</li>
+              <li>Testing on localhost and local network with multiple ports</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back bottom -->
+      <div class="d-flex justify-content-center my-4">
+        <a href="../../../portfolio.html" class="btn btn-outline-dark">
+          &larr; Back to Portfolio
+        </a>
+      </div>
+
+      <footer class="py-3 text-center">
+        <small class="text-body-secondary">© 2025 Lucas Jardim</small>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Site JS (optional) -->
+    <script src="../../js/script.js"></script>
+  </body>
+</html>

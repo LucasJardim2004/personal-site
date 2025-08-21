@@ -1,0 +1,17 @@
+ISCTE blue - rgb(20,39,186)
+
+projetos:
+isctorrent
+sokoban
+dice generator
+caderneta euro
+geoorganizer
+cocktail generator
+pong
+
+simon game
+flag guesser
+world tracker
+
+
+16:9 (1200×675)

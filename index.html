@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Base FIRST -->
+    <base href="/personal-site/" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap CSS -->
     <link
@@ -21,29 +27,35 @@
     <!-- JS -->
     <script src="js/script.js" defer></script>
 
-    <meta name="description" content="Lucas Jardim — ISCTE-IUL student. Portfolio, certificates, contacts and CV.">
-    <meta property="og:title" content="Lucas Jardim — Personal Site">
-    <meta property="og:description" content="Portfolio, certificates, contacts and CV.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="../images/homeFaceImage.jpeg">
-    <meta name="theme-color" content="#FFFFFF">
+    <meta
+      name="description"
+      content="Lucas Jardim — ISCTE-IUL student. Portfolio, certificates, contacts and CV."
+    />
+    <meta property="og:title" content="Lucas Jardim — Personal Site" />
+    <meta
+      property="og:description"
+      content="Portfolio, certificates, contacts and CV."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/homeFaceImage.jpeg" />
+    <meta name="theme-color" content="#FFFFFF" />
 
     <style>
       .iscte-links {
-        color: rgb(20,39,186);
+        color: rgb(20, 39, 186);
         text-decoration: none;
       }
 
       .name-title {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 300;
         letter-spacing: 0.8px;
         line-height: 1.1;
       }
       .sidebar {
         min-height: 100vh;
-        background-color: #D4D4D4;
-        border-right: 1px solid #2B2B2B;
+        background-color: #d4d4d4;
+        border-right: 1px solid #2b2b2b;
         display: flex;
         flex-direction: column;
       }
@@ -53,60 +65,102 @@
       }
 
       .sidebar ul a:hover {
-        background-color: #2B2B2B;
-        color: #FFFFFF;
+        background-color: #2b2b2b;
+        color: #ffffff;
         border-radius: 6px;
       }
 
       .sidebar .btn-toggle {
-        color: #2B2B2B;
+        color: #2b2b2b;
         font-weight: 500;
       }
 
       body {
         font-family: "Inter", system-ui, -apple-system, sans-serif;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
       }
 
-      body { overflow-x: hidden; }
+      body {
+        overflow-x: hidden;
+      }
 
       .toggle-fab {
         position: fixed;
         top: 10px;
         left: calc(280px + 16px);
-        z-index: 1050; 
+        z-index: 1050;
       }
       body.sidebar-collapsed .toggle-fab {
-        left: 16px; 
-      }
-  
-      .hero { min-height: 70vh; border-radius: 16px; overflow: hidden; }
-      .hero-copy { max-width: 640px; }
-      .hero-image { min-height: 320px; }
-      .object-fit-cover { object-fit: cover; }
-      .hero-image img { display: block; }
-      .hero-gradient { position: absolute; inset: 0; pointer-events: none;
-        background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 35%, rgba(255,255,255,0.15) 65%, rgba(255,255,255,0) 100%); }
-
-      @media (max-width: 991.98px) { 
-        .hero { min-height: 60vh; }
-        .hero-gradient { background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.1) 100%); }
+        left: 16px;
       }
 
-      .hero-image { position: relative; }
-      .hero-image img { 
-        display: block; 
-        border-top-right-radius: 16px; 
-        border-bottom-right-radius: 16px; 
+      .hero {
+        min-height: 70vh;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      .hero-copy {
+        max-width: 640px;
+      }
+      .hero-image {
+        min-height: 320px;
+      }
+      .object-fit-cover {
+        object-fit: cover;
+      }
+      .hero-image img {
+        display: block;
+      }
+      .hero-gradient {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(255, 255, 255, 0.75) 35%,
+          rgba(255, 255, 255, 0.15) 65%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+
+      @media (max-width: 991.98px) {
+        .hero {
+          min-height: 60vh;
+        }
+        .hero-gradient {
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.6) 40%,
+            rgba(255, 255, 255, 0.1) 100%
+          );
+        }
+      }
+
+      .hero-image {
+        position: relative;
+      }
+      .hero-image img {
+        display: block;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
         filter: saturate(1.02) contrast(1.02);
       }
 
-      .hero-image::before { 
-        content: ""; 
-        position: absolute; 
-        inset: 0; 
-        pointer-events: none; 
-        background: radial-gradient(120% 160% at -10% 50%, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.85) 22%, rgba(255,255,255,0.55) 32%, rgba(255,255,255,0.25) 40%, rgba(255,255,255,0) 50%);
+      .hero-image::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(
+          120% 160% at -10% 50%,
+          rgba(255, 255, 255, 0.98) 0%,
+          rgba(255, 255, 255, 0.85) 22%,
+          rgba(255, 255, 255, 0.55) 32%,
+          rgba(255, 255, 255, 0.25) 40%,
+          rgba(255, 255, 255, 0) 50%
+        );
       }
 
       .hero-image::after {
@@ -114,7 +168,7 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-        box-shadow: inset 0 0 60px rgba(0,0,0,0.08);
+        box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.08);
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;
       }
@@ -123,7 +177,7 @@
         width: 280px;
         opacity: 1;
         padding: 1rem;
-        transition: width .3s ease, opacity .3s ease, padding .3s ease;
+        transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
       }
       #sidebar.collapsed {
         width: 0;
@@ -132,188 +186,260 @@
       }
 
       .text-primary {
-        color: #2B2B2B !important;
+        color: #2b2b2b !important;
       }
 
       .btn-primary {
-        background-color: #2B2B2B;
-        border-color: #2B2B2B;
+        background-color: #2b2b2b;
+        border-color: #2b2b2b;
       }
       .btn-primary:hover {
-        background-color: #B3B3B3;
-        border-color: #B3B3B3;
+        background-color: #b3b3b3;
+        border-color: #b3b3b3;
       }
 
       .btn-outline-secondary {
-        border-color: #B3B3B3;
-        color: #B3B3B3;
+        border-color: #b3b3b3;
+        color: #b3b3b3;
       }
       .btn-outline-secondary:hover {
-        background-color: #B3B3B3;
-        color: #FFFFFF;
+        background-color: #b3b3b3;
+        color: #ffffff;
       }
 
       .btn-outline-dark {
-        border-color: #2B2B2B;
-        color: #2B2B2B;
+        border-color: #2b2b2b;
+        color: #2b2b2b;
       }
       .btn-outline-dark:hover {
-        background-color: #2B2B2B;
-        color: #FFFFFF;
+        background-color: #2b2b2b;
+        color: #ffffff;
       }
 
       @media (max-width: 1000px) {
-        .hero .col-text { order: 1; }
-        .hero .col-image { order: 2; }
+        .hero .col-text {
+          order: 1;
+        }
+        .hero .col-image {
+          order: 2;
+        }
       }
 
       @media (max-width: 800px) {
-        #sidebar { width: 200px; }
-        .toggle-fab { left: calc(200px + 16px); }
-        #sidebar .img-fluid.rounded-circle { max-width: 110px !important; }
-        #sidebar .name-title { font-size: 1.1rem; }
-        #sidebar .btn.w-75 { width: 90% !important; padding: .4rem .5rem; font-size: .9rem; }
+        #sidebar {
+          width: 200px;
+        }
+        .toggle-fab {
+          left: calc(200px + 16px);
+        }
+        #sidebar .img-fluid.rounded-circle {
+          max-width: 110px !important;
+        }
+        #sidebar .name-title {
+          font-size: 1.1rem;
+        }
+        #sidebar .btn.w-75 {
+          width: 90% !important;
+          padding: 0.4rem 0.5rem;
+          font-size: 0.9rem;
+        }
       }
 
       @media (max-width: 600px) {
-        #sidebar { display: none; }
-        .toggle-fab { display: none; }
-        .hero { min-height: auto; }
-        .hero-copy { padding: 1.25rem !important; }
-        .hero-image img { height: 260px; border-radius: 12px; }
+        #sidebar {
+          display: none;
+        }
+        .toggle-fab {
+          display: none;
+        }
+        .hero {
+          min-height: auto;
+        }
+        .hero-copy {
+          padding: 1.25rem !important;
+        }
+        .hero-image img {
+          height: 260px;
+          border-radius: 12px;
+        }
       }
     </style>
   </head>
   <body class="d-flex">
+    <div
+      id="sidebar"
+      class="flex-shrink-0 p-3 sidebar text-center border-end"
+      style="transition: all 0.3s; overflow: hidden"
+    >
+      <div class="mb-3">
+        <img
+          src="images/homeFaceImage.jpeg"
+          alt="Foto de perfil"
+          class="img-fluid rounded-circle shadow-sm"
+          style="max-width: 150px"
+        />
+      </div>
 
-  <div id="sidebar" 
-       class="flex-shrink-0 p-3 sidebar text-center border-end" 
-       style="transition: all 0.3s; overflow: hidden;">
-    
-    <div class="mb-3">
-      <img
-        src="/images/homeFaceImage.jpeg"
-        alt="Foto de perfil"
-        class="img-fluid rounded-circle shadow-sm"
-        style="max-width: 150px"
-      />
+      <h2 class="fw-bold mb-1 name-title">Lucas Jardim</h2>
+
+      <p class="text-muted">
+        <a
+          href="https://www.iscte-iul.pt/"
+          target="_blank"
+          rel="noopener"
+          class="fw-semibold iscte-links"
+        >
+          ISCTE-IUL
+        </a>
+        University Student
+      </p>
+
+      <hr />
+
+      <!-- Menu -->
+      <ul class="list-unstyled ps-0">
+        <li class="mb-2 text-center">
+          <a href="portfolio.html" class="btn btn-light w-75">Portfolio</a>
+        </li>
+        <li class="mb-2 text-center">
+          <a href="certificates.html" class="btn btn-light w-75"
+            >Certificates</a
+          >
+        </li>
+        <li class="mb-2 text-center">
+          <a href="contacts.html" class="btn btn-light w-75">Contacts</a>
+        </li>
+        <li class="mb-2 text-center">
+          <a href="curriculum.html" class="btn btn-light w-75">Curriculum</a>
+        </li>
+      </ul>
+
+      <footer class="sidebar-footer mt-auto py-3 d-flex justify-content-center">
+        <div class="d-flex gap-3">
+          <a
+            href="https://www.linkedin.com/in/lucascostajardim/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-linkedin text-dark"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/LucasJardim2004"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-github text-dark"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              />
+            </svg>
+          </a>
+        </div>
+      </footer>
     </div>
 
-    <h2 class="fw-bold mb-1 name-title">Lucas Jardim</h2>
-
-    <p class="text-muted">
-      <a href="https://www.iscte-iul.pt/" target="_blank" rel="noopener" class="fw-semibold iscte-links">
-        ISCTE-IUL
-      </a> University Student
-    </p>
-
-    <hr>
-
-    <!-- Menu -->
-    <ul class="list-unstyled ps-0">
-      <li class="mb-2 text-center"><a href="portfolio.html" class="btn btn-light w-75">Portfolio</a></li>
-      <li class="mb-2 text-center"><a href="certificates.html" class="btn btn-light w-75">Certificates</a></li>
-      <li class="mb-2 text-center"><a href="contacts.html" class="btn btn-light w-75">Contacts</a></li>
-      <li class="mb-2 text-center"><a href="curriculum.html" class="btn btn-light w-75">Curriculum</a></li>
-    </ul>
-    
-    <footer class="sidebar-footer mt-auto py-3 d-flex justify-content-center">
-      <div class="d-flex gap-3">
-            <a
-              href="https://www.linkedin.com/in/lucascostajardim/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                fill="currentColor"
-                class="bi bi-linkedin text-dark"
-                viewBox="0 0 16 16"
+    <!-- Main Content -->
+    <main class="p-4 w-100">
+      <!-- Hero Section -->
+      <section class="hero container-fluid">
+        <div class="row g-0 align-items-stretch">
+          <!-- Left: Text -->
+          <div class="col-12 col-lg-6 d-flex col-text">
+            <div class="hero-copy align-self-center p-4 p-md-5">
+              <span class="badge rounded-pill text-bg-secondary mb-3"
+                >Welcome</span
               >
-                <path
-                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://github.com/LucasJardim2004"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                fill="currentColor"
-                class="bi bi-github text-dark"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                />
-              </svg>
-            </a>
-          </div>
-    </footer>
-  </div>
-
-  <!-- Main Content -->
-  <main class="p-4 w-100">
-
-    <!-- Hero Section -->
-    <section class="hero container-fluid">
-      <div class="row g-0 align-items-stretch">
-        <!-- Left: Text -->
-        <div class="col-12 col-lg-6 d-flex col-text">
-          <div class="hero-copy align-self-center p-4 p-md-5">
-            <span class="badge rounded-pill text-bg-secondary mb-3">Welcome</span>
-            <h1 class="display-5 fw-bold mb-2">Hey, I’m <span class="text-primary">Lucas Jardim</span></h1>
-            <h6><a href="https://www.iscte-iul.pt/degree/code/9189/bachelor-degree-in-computer-science-and-business-management" target="_blank" rel="noopener" class="fw-semibold iscte-links">Computer Science and Business Management Student</a></h6>
-            <p class="lead mb-4">And this is my website. Explore my portfolio, certificates and how to reach me.</p>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
-              <a href="curriculum.html" class="btn btn-outline-dark">Download CV</a>
-              <a href="contacts.html" class="btn btn-outline-dark">Contact</a>
+              <h1 class="display-5 fw-bold mb-2">
+                Hey, I’m <span class="text-primary">Lucas Jardim</span>
+              </h1>
+              <h6>
+                <a
+                  href="https://www.iscte-iul.pt/degree/code/9189/bachelor-degree-in-computer-science-and-business-management"
+                  target="_blank"
+                  rel="noopener"
+                  class="fw-semibold iscte-links"
+                  >Computer Science and Business Management Student</a
+                >
+              </h6>
+              <p class="lead mb-4">
+                And this is my website. Explore my portfolio, certificates and
+                how to reach me.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="portfolio.html" class="btn btn-primary"
+                  >View Portfolio</a
+                >
+                <a href="curriculum.html" class="btn btn-outline-dark"
+                  >Download CV</a
+                >
+                <a href="contacts.html" class="btn btn-outline-dark">Contact</a>
+              </div>
             </div>
           </div>
+
+          <!-- Right: Image -->
+          <div class="col-12 col-lg-6 position-relative hero-image col-image">
+            <img
+              src="images/parisphoto.jpeg"
+              alt="Lucas Jardim — photo"
+              class="w-100 h-100 object-fit-cover"
+            />
+            <div class="hero-gradient"></div>
+          </div>
         </div>
+      </section>
+      <!-- Toggle -->
+    </main>
+    <button
+      id="toggleSidebar"
+      class="btn btn-outline-dark toggle-fab"
+      aria-controls="sidebar"
+      aria-expanded="true"
+    >
+      ☰ Toggle Sidebar
+    </button>
 
-        <!-- Right: Image -->
-        <div class="col-12 col-lg-6 position-relative hero-image col-image">
-          <img src="/images/parisphoto.jpeg" alt="Lucas Jardim — photo" class="w-100 h-100 object-fit-cover">
-          <div class="hero-gradient"></div>
-        </div>
-      </div>
-    </section>
-        <!-- Toggle -->
-  </main>
-  <button id="toggleSidebar" class="btn btn-outline-dark toggle-fab" aria-controls="sidebar" aria-expanded="true">☰ Toggle Sidebar</button>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Bootstrap JS -->
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
-    crossorigin="anonymous">
-  </script>
+    <!-- Script para toggle -->
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggleSidebar");
 
-  <!-- Script para toggle -->
-  <script>
-    const sidebar = document.getElementById("sidebar");
-    const toggleBtn = document.getElementById("toggleSidebar");
+      setCollapsed(false);
 
-    setCollapsed(false);
+      function setCollapsed(collapsed) {
+        sidebar.classList.toggle("collapsed", collapsed);
+        document.body.classList.toggle("sidebar-collapsed", collapsed);
+        toggleBtn.setAttribute("aria-expanded", String(!collapsed));
+      }
 
-    function setCollapsed(collapsed) {
-      sidebar.classList.toggle("collapsed", collapsed);
-      document.body.classList.toggle("sidebar-collapsed", collapsed);
-      toggleBtn.setAttribute("aria-expanded", String(!collapsed));
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      setCollapsed(!sidebar.classList.contains("collapsed"));
-    });
-  </script>
-</body>
+      toggleBtn.addEventListener("click", () => {
+        setCollapsed(!sidebar.classList.contains("collapsed"));
+      });
+    </script>
+  </body>
 </html>

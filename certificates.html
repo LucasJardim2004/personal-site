@@ -21,14 +21,6 @@
     <!-- JS -->
     <script src="js/script.js" defer></script>
     <script>
-      (function () {
-        var repo = "personal-site";
-        var base = document.createElement("base");
-        var isGhPages = /\.github\.io$/.test(location.hostname);
-        var hasRepoInPath = location.pathname.indexOf("/" + repo + "/") !== -1;
-        base.href = isGhPages || hasRepoInPath ? "/" + repo + "/" : "/";
-        document.head.prepend(base);
-      })();
     </script>
 
     <style>
